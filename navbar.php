@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #22c2fc;" href="https://noahosterhout.com/blog.php"> blog</a>
+                    <a class="nav-link" style="color: #22c2fc;" href="https://github.com/NoahFlowa/Blog"> blog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="color: #22c2fc;" href="https://github.com/NoahFlowa"> github</a>

@@ -4,7 +4,7 @@
 
         <ul class="nav col-md-6 justify-content-end">
             <li class="nav-item">
-                <a class="nav-link" style="color: #22c2fc;" href="https://noahosterhout.com/blog.php"> blog</a>
+                <a class="nav-link" style="color: #22c2fc;" href="https://github.com/NoahFlowa/Blog"> blog</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" style="color: #22c2fc;" href="https://github.com/NoahFlowa"> github</a>

@@ -7,7 +7,7 @@
             <p class="fs-5">
                 I am employed as a Programmer at SunFrog Solutions creating in house tools, report pages and projects.
                 I also love to hang out with my friends in Traverse City, Michigan and play on my <a href="/pcSpecs.php">custom built gaming PC</a>.
-                Sometimes I dabble in game creation with Unreal Engine 5 and even Virtual and Augmented Reality with my Meta Quest 2 and the HTC Vive.
+                Sometimes I dabble in game creation with Unreal Engine 5 or even Virtual and Mixed Reality with my Meta Quest 3, Meta Quest 2 and the HTC Vive.
             </p>
         </li>
 

@@ -25,12 +25,12 @@
             <div class="card">
                 <div class="card-body">
                     <p class="text-center pb-4"><img src="/img/chatversity-logo.svg" width="150" height="150"></p>
-                    <h5 class="card-title fw-bold">Chatversity</h5>
+                    <h5 class="card-title fw-bold">Chatversity <small>(Archived)</small></h5>
                     <p class="card-text fs-5">
                         Winning Capstone project of spring 2019 where the team had the idea to make it simpler for college students to create
                         school groups and find them.
                     </p>
-                    <a href="https://github.com/NoahsNMC/Chatversity_App" class="btn btn-outline-primary">View GitHub Repo</a>
+                    <a href="https://github.com/NoahsNMC/Chatversity_App" class="btn btn-outline-primary" disabled>View GitHub Repo</a>
                 </div>
             </div>
         </div>

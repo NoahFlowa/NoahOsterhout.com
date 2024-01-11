@@ -30,7 +30,7 @@
                         Winning Capstone project of spring 2019 where the team had the idea to make it simpler for college students to create
                         school groups and find them.
                     </p>
-                    <a href="https://github.com/NoahsNMC/Chatversity_App" class="btn btn-outline-primary" disabled>View GitHub Repo</a>
+                    <a href="https://github.com/NoahsNMC/Chatversity_App" class="btn btn-outline-primary disabled">View GitHub Repo</a>
                 </div>
             </div>
         </div>

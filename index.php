@@ -47,7 +47,7 @@
 
             <div class="mt-5">
                 <p class="fs-3 mb-0">Experience</p>
-                <p class="fs-5 mt-2">Systems Programmer @ SunFrog Solutions, Inc. (2022 - Present)</p>
+                <p class="fs-5 mt-2">Systems Programmer @ <a href="https://sunfrogsolutions.com" target="_blank">SunFrog Solutions, Inc.</a> (2022 - Present)</p>
             </div>
 
             <div class="mt-5">
@@ -82,12 +82,17 @@
                     ?>
                 </div>
             </div>
+
+            <div class="color-mode-div">
+                <button type="button" class="btn btn-light" id="color-mode-button"><i class="fa-solid fa-moon"></i></button>
+            </div>
             
             <div id="project-overlay" class="project-overlay">
                 <div id="project-content"></div>
             </div>
         </div>
 
+        <script src="/js/theme.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script>

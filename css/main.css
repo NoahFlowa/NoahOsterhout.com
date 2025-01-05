@@ -128,7 +128,33 @@ pre {
 
 .color-mode-div {
     position: fixed;
-    top: 10px;
     right: 10px;
     z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .color-mode-div {
+        top: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .color-mode-div {
+        bottom: 20px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 50%;
+        padding: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    #color-mode-button {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "abberancy";
+    src: url(/css/fonts/abberancy/Abberancy.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+code {
+    background-color: #333;
+    color: white;
+    border-radius: 3px;
+    padding: 2px 4px;
+}
+
+.project-link:hover {
+    color: #0d6efd;
+    cursor: pointer;
+}
+
+.project-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.project-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.back-button {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* Ensuring consistent content spacing */
+.project-section {
+    margin-bottom: 30px;
+}

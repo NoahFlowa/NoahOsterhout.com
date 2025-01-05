@@ -17,70 +17,33 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
         <link rel="manifest" href="/favicons/site.webmanifest">
         
-        <style>
-            body {
-                font-family: 'Montserrat', sans-serif;
-            }
-
-            a {
-                color: black;
-                text-decoration: none;
-            }
-
-            code {
-                background-color: #333;
-                color: white;
-                border-radius: 3px;
-                padding: 2px 4px;
-            }
-            
-            .project-link:hover {
-                color: #0d6efd;
-                cursor: pointer;
-            }
-            
-            .project-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: white;
-                z-index: 1000;
-                overflow-y: auto;
-            }
-
-            .project-container {
-                max-width: 700px;
-                margin: 0 auto;
-                padding: 40px 20px;
-            }
-            
-            .back-button {
-                cursor: pointer;
-                display: inline-block;
-                margin-right: 15px;
-            }
-            
-            .project-header {
-                display: flex;
-                align-items: center;
-                margin-bottom: 40px;
-            }
-
-            /* Ensuring consistent content spacing */
-            .project-section {
-                margin-bottom: 30px;
-            }
-        </style>
+        <!--- Custom CSS --->
+        <link rel="stylesheet" href="/css/main.css">
     </head>
     <body>
         <div class="container">
-            <div class="mt-5">
-                <p class="fs-1 mb-0">Noah Osterhout</p>
-                <p class="fs-4">Professional Code Wrangler Extraordinaire</p>
+        <div class="mt-5">
+            <p class="fs-1 mb-0">Noah Osterhout</p>
+            <p class="fs-4">Professional Code Wrangler Extraordinaire</p>
+
+            <div class="mt-2 mb-3">
+                <a href="https://github.com/NoahFlowa" target="_blank" class="me-3">
+                    <i class="fa-brands fa-square-github fa-lg"></i>
+                </a>
+                <a href="https://gitlab.com/NoahFlowa" target="_blank" class="me-3">
+                    <i class="fa-brands fa-square-gitlab fa-lg"></i>
+                </a>
+                <a href="https://stackoverflow.com/users/9227487/noah-osterhout?tab=profile" target="_blank" class="me-3">
+                    <i class="fa-brands fa-stack-overflow fa-lg"></i>
+                </a>
+                <a href="https://stackexchange.com/users/12700630/noah-osterhout" target="_blank" class="me-3">
+                    <i class="fa-brands fa-stack-exchange fa-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/noah-osterhout-732171149" target="_blank" class="me-3">
+                    <i class="fa-brands fa-linkedin fa-lg"></i>
+                </a>
             </div>
+        </div>
 
             <div class="mt-5">
                 <p class="fs-3 mb-0">Experience</p>
@@ -105,6 +68,20 @@
                     ?>
                 </div>
             </div>
+
+            <div class="mt-5">
+                <p class="fs-3 mb-0">Blogs</p>
+                <div class="projects-list">
+                    <?php
+                    // Get list of blog files
+                    $blogs = glob('blogs/*.php');
+                    foreach($blogs as $blog) {
+                        $name = basename($blog, '.php');
+                        echo "<p class='fs-5 mt-2'><a class='project-link' data-project='$name'>$name</a></p>";
+                    }
+                    ?>
+                </div>
+            </div>
             
             <div id="project-overlay" class="project-overlay">
                 <div id="project-content"></div>
@@ -118,12 +95,13 @@
                 $('.project-link').click(function(e) {
                     e.preventDefault();
                     const project = $(this).data('project');
+                    const isBlog = $(this).closest('.projects-list').prev('p').text() === 'Blogs';
                     
-                    // Load project content
+                    // Load content
                     $.ajax({
-                        url: 'load-project.php',
+                        url: isBlog ? 'load-blog.php' : 'load-project.php',
                         method: 'GET',
-                        data: { project: project },
+                        data: isBlog ? { blog: project } : { project: project },
                         success: function(response) {
                             $('#project-content').html(response);
                             $('#project-overlay').fadeIn(300);
@@ -134,7 +112,7 @@
                             });
                         },
                         error: function() {
-                            $('#project-content').html('<p class="text-danger">Error loading project details.</p>');
+                            $('#project-content').html('<p class="text-danger">Error loading content.</p>');
                         }
                     });
                 });

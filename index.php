@@ -47,7 +47,7 @@
 
             <div class="mt-5">
                 <p class="fs-3 mb-0">Experience</p>
-                <p class="fs-5 mt-2">Systems Programmer @ <a href="https://sunfrogsolutions.com" target="_blank">SunFrog Solutions, Inc.</a> (2022 - Present)</p>
+                <p class="fs-5 mt-2">Systems Programmer @ <a href="https://sunfrogsolutions.com" target="_blank">SunFrog Solutions</a> (2022 - Present)</p>
             </div>
 
             <div class="mt-5">

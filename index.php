@@ -42,6 +42,9 @@
                 <a href="https://www.linkedin.com/in/noah-osterhout-732171149" target="_blank" class="me-3">
                     <i class="fa-brands fa-linkedin fa-lg"></i>
                 </a>
+                <a href="https://bday.noahosterhout.com" target="_blank" class="me-3">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </a>
             </div>
         </div>
 

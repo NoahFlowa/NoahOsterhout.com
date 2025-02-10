@@ -156,7 +156,7 @@
                     e.preventDefault();
                     e.stopPropagation();
                     const blogId = $(this).data('blog');
-                    loadContent('load-blog.php', { blog: blogId }, 'blog-overlay');
+                    loadContent('load-blog.php', { blog: blogId }, 'project-overlay');
                 });
 
                 // Single overlay close handler for both

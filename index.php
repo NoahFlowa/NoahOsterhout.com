@@ -69,7 +69,7 @@
                     echo '
                     <div class="col-md-6">
                         <div class="project-item">
-                            <h3 class="project-title">' . htmlspecialchars($project['title']) . '</h3>
+                            <h3 class=" fs-5 project-title">' . htmlspecialchars($project['title']) . '</h3>
                             <p class="project-summary">' . htmlspecialchars($project['summary']) . '</p>
                             <div class="project-tags mb-3">';
                             foreach($project['technologies'] as $tech) {
@@ -100,7 +100,7 @@
                         echo '
                         <div class="col-md-6">
                             <div class="blog-item">
-                                <h3 class="blog-title">' . htmlspecialchars($blog['title']) . '</h3>
+                                <h3 class="fs-5 blog-title">' . htmlspecialchars($blog['title']) . '</h3>
                                 <div class="blog-metadata">
                                     <span>' . date('M j, Y', strtotime($blog['publishDate'])) . '</span>
                                     <span>' . htmlspecialchars($blog['readingTime']) . ' read</span>

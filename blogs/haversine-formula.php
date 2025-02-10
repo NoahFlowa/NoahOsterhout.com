@@ -1,7 +1,7 @@
 <div class="project-container mt-3">
     <div class="project-header">
         <span class="back-button fs-2">
-            <i class="fas fa-arrow-left"></i>
+            &#8592;
         </span>
         <h2 class="fs-2 mb-0">Haversine Formula & User Location</h2>
     </div>

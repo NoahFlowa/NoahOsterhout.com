@@ -80,7 +80,7 @@
                             data-project="' . htmlspecialchars($project['id']) . '"
                             data-has-post="' . ($project['hasPost'] ? 'true' : 'false') . '"
                             ' . (!$project['hasPost'] ? 'data-external-url="' . htmlspecialchars($project['externalUrl']) . '"' : '') . '>
-                                ' . ($project['hasPost'] ? 'View Details' : 'View on GitHub') . ' →
+                                ' . ($project['hasPost'] ? 'View Details' : 'View on GitHub') . ' &#8594;
                             </a>
                         </div>
                     </div>';

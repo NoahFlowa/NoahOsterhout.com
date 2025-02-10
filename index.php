@@ -61,7 +61,6 @@
             <div class="mt-5">
                 <p class="fs-3 mb-0">Projects</p>
                 <div class="projects-list">
-                    <a href="https://github.com/NoahFlowa/NoahOsterhout.com" class="project-link">Personal Website</a>
                     <?php
                     // Get list of project files
                     $projects = glob('projects/*.php');

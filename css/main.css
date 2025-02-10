@@ -76,6 +76,10 @@ pre {
     overflow-x: auto;
 }
 
+.container {
+    padding-bottom: 4rem;
+}
+
 /* Projects and Blog Items Shared Styles */
 .project-item,
 .blog-item {
@@ -166,12 +170,22 @@ pre {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background-color: var(--overlay-background);
     z-index: 1000;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     transition: background-color 0.3s ease;
+}
+
+#project-overlay-content,
+#blog-overlay-content {
+    min-height: 100%;
+    width: 100%;
+    position: relative;
 }
 
 .project-container {
@@ -249,5 +263,16 @@ pre {
     .project-item,
     .blog-item {
         padding: 1rem;
+    }
+
+    .container {
+        padding-bottom: 6rem;
+    }
+
+    .project-overlay,
+    .blog-overlay {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
     }
 }

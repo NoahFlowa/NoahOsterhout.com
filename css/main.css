@@ -147,8 +147,7 @@ pre {
 }
 
 /* Links */
-.project-link,
-.blog-link {
+.project-link {
     display: inline-block;
     margin-top: 0.5rem;
     font-size: 0.9rem;
@@ -157,10 +156,27 @@ pre {
     transition: color 0.3s ease;
 }
 
-.project-link:hover,
-.blog-link:hover {
+.project-link:hover {
     color: var(--link-hover-color);
     cursor: pointer;
+}
+
+.blog-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.blog-link:hover {
+    color: var(--link-hover-color);
 }
 
 /* Overlay Styles */

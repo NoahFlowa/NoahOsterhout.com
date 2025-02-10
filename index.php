@@ -98,19 +98,19 @@
                     
                     foreach($blogs as $blog) {
                         echo '
-                        <div class="col-md-6">
-                            <div class="blog-item">
-                                <h3 class="blog-title">' . htmlspecialchars($blog['title']) . '</h3>
-                                <div class="blog-metadata">
-                                    <span>' . date('M j, Y', strtotime($blog['publishDate'])) . '</span>
-                                    <span>' . htmlspecialchars($blog['readingTime']) . ' read</span>
+                            <div class="col-md-6">
+                                <div class="blog-item">
+                                    <h3 class="blog-title">' . htmlspecialchars($blog['title']) . '</h3>
+                                    <div class="blog-metadata">
+                                        <span>' . date('M j, Y', strtotime($blog['publishDate'])) . '</span>
+                                        <span>' . htmlspecialchars($blog['readingTime']) . ' read</span>
+                                    </div>
+                                    <p class="blog-summary">' . htmlspecialchars($blog['summary']) . '</p>
+                                    <button class="blog-link" type="button" data-blog="' . htmlspecialchars($blog['id']) . '">
+                                        Read More &#8594;
+                                    </button>
                                 </div>
-                                <p class="blog-summary">' . htmlspecialchars($blog['summary']) . '</p>
-                                <a class="blog-link" data-blog="' . htmlspecialchars($blog['id']) . '">
-                                    Read More →
-                                </a>
-                            </div>
-                        </div>';
+                            </div>';
                     }
                     ?>
                 </div>
@@ -127,6 +127,8 @@
             <div id="blog-overlay" class="blog-overlay">
                 <div id="blog-overlay-content"></div>
             </div>
+
+            <div class="footer mt-5 mb-5"></div>
         </div>
 
         <script src="/js/theme.js"></script>
@@ -150,18 +152,11 @@
                 });
 
                 // Blog handling
-                $(document).on('click touchstart', '.blog-link', function(e) {
+                $('.blog-link').on('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
                     const blogId = $(this).data('blog');
                     loadContent('load-blog.php', { blog: blogId }, 'blog-overlay');
-                });
-
-                // Handle overlay closing
-                $(document).on('click touchstart', '.back-button', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    $('.project-overlay, .blog-overlay').fadeOut(300);
                 });
 
                 function loadContent(endpoint, data, overlayId) {
@@ -172,12 +167,22 @@
                         success: function(response) {
                             $(`#${overlayId}-content`).html(response);
                             $(`#${overlayId}`).fadeIn(300);
+                            
+                            // Prevent body scrolling when overlay is open
+                            $('body').css('overflow', 'hidden');
                         },
                         error: function() {
                             $(`#${overlayId}-content`).html('<p class="text-danger">Error loading content.</p>');
                         }
                     });
                 }
+
+                // Handle overlay closing
+                $('.back-button').on('click', function() {
+                    $('.project-overlay, .blog-overlay').fadeOut(300);
+                    // Restore body scrolling when overlay is closed
+                    $('body').css('overflow', '');
+                });
             });
         </script>
     </body>

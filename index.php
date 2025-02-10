@@ -140,11 +140,13 @@
                 $(document).on('click touchstart', '.project-link', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
+                    
                     const projectId = $(this).data('project');
                     const hasPost = $(this).data('has-post');
                     const externalUrl = $(this).data('external-url');
 
                     if (hasPost) {
+                        $('body').css('overflow', 'hidden');
                         loadContent('load-project.php', { project: projectId }, 'project-overlay');
                     } else if (externalUrl) {
                         window.open(externalUrl, '_blank');
@@ -155,7 +157,9 @@
                 $(document).on('click touchstart', '.blog-link', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
+                    
                     const blogId = $(this).data('blog');
+                    $('body').css('overflow', 'hidden');
                     loadContent('load-blog.php', { blog: blogId }, 'blog-overlay');
                 });
 
@@ -163,9 +167,31 @@
                 $(document).on('click touchstart', '.back-button', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    $('.project-overlay, .blog-overlay').fadeOut(300);
+                    
+                    $('.project-overlay, .blog-overlay').fadeOut(300, function() {
+                        $('body').css('overflow', '');
+                    });
                 });
 
+                // Close overlay when clicking outside content
+                $(document).on('click touchstart', '.project-overlay, .blog-overlay', function(e) {
+                    if ($(e.target).hasClass('project-overlay') || $(e.target).hasClass('blog-overlay')) {
+                        $(this).fadeOut(300, function() {
+                            $('body').css('overflow', '');
+                        });
+                    }
+                });
+
+                // Handle escape key
+                $(document).keydown(function(e) {
+                    if (e.key === 'Escape') {
+                        $('.project-overlay, .blog-overlay').fadeOut(300, function() {
+                            $('body').css('overflow', '');
+                        });
+                    }
+                });
+
+                // Content loading function
                 function loadContent(endpoint, data, overlayId) {
                     $.ajax({
                         url: endpoint,
@@ -175,11 +201,27 @@
                             $(`#${overlayId}-content`).html(response);
                             $(`#${overlayId}`).fadeIn(300);
                         },
-                        error: function() {
-                            $(`#${overlayId}-content`).html('<p class="text-danger">Error loading content.</p>');
+                        error: function(xhr, status, error) {
+                            $(`#${overlayId}-content`).html(`
+                                <div class="container">
+                                    <div class="project-header">
+                                        <span class="back-button">←</span>
+                                        <h1>Error</h1>
+                                    </div>
+                                    <p class="text-danger">Error loading content. Please try again later.</p>
+                                </div>
+                            `);
+                            console.error('Error loading content:', error);
                         }
                     });
                 }
+
+                // Handle browser history
+                $(window).on('popstate', function() {
+                    $('.project-overlay, .blog-overlay').fadeOut(300, function() {
+                        $('body').css('overflow', '');
+                    });
+                });
             });
         </script>
     </body>

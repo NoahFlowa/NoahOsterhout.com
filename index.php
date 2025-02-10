@@ -60,28 +60,57 @@
 
             <div class="mt-5">
                 <p class="fs-3 mb-0">Projects</p>
-                <div class="projects-list">
-                    <p class='fs-5 mt-2'><a href="https://github.com/NoahFlowa/NoahOsterhout.com" target="_blank">personal-website</a></p>
-                    <?php
-                    // Get list of project files
-                    $projects = glob('projects/*.php');
-                    foreach($projects as $project) {
-                        $name = basename($project, '.php');
-                        echo "<p class='fs-5 mt-2'><a class='project-link' data-project='$name'>$name</a></p>";
-                    }
-                    ?>
+                <div class="projects-grid row g-4 mt-2">
+                <?php
+                $projectsJson = file_get_contents('projects/projects.json');
+                $projects = json_decode($projectsJson, true)['projects'];
+
+                foreach($projects as $project) {
+                    echo '
+                    <div class="col-md-6">
+                        <div class="project-item">
+                            <h3 class="project-title">' . htmlspecialchars($project['title']) . '</h3>
+                            <p class="project-summary">' . htmlspecialchars($project['summary']) . '</p>
+                            <div class="project-tags mb-3">';
+                            foreach($project['technologies'] as $tech) {
+                                echo '<span class="tech-tag">' . htmlspecialchars($tech) . '</span>';
+                            }
+                            echo '</div>
+                            <a class="project-link" 
+                            data-project="' . htmlspecialchars($project['id']) . '"
+                            data-has-post="' . ($project['hasPost'] ? 'true' : 'false') . '"
+                            ' . (!$project['hasPost'] ? 'data-external-url="' . htmlspecialchars($project['externalUrl']) . '"' : '') . '>
+                                ' . ($project['hasPost'] ? 'View Details' : 'View on GitHub') . ' →
+                            </a>
+                        </div>
+                    </div>';
+                }
+                ?>
                 </div>
             </div>
 
             <div class="mt-5">
-                <p class="fs-3 mb-0">Blogs</p>
-                <div class="projects-list">
+                <p class="fs-3 mb-0">Blog Posts</p>
+                <div class="blogs-grid row g-4 mt-2">
                     <?php
-                    // Get list of blog files
-                    $blogs = glob('blogs/*.php');
+                    $blogsJson = file_get_contents('blogs/blogs.json');
+                    $blogs = json_decode($blogsJson, true)['blogs'];
+                    
                     foreach($blogs as $blog) {
-                        $name = basename($blog, '.php');
-                        echo "<p class='fs-5 mt-2'><a class='project-link' data-project='$name'>$name</a></p>";
+                        echo '
+                        <div class="col-md-6">
+                            <div class="blog-item">
+                                <h3 class="blog-title">' . htmlspecialchars($blog['title']) . '</h3>
+                                <div class="blog-metadata">
+                                    <span>' . date('M j, Y', strtotime($blog['publishDate'])) . '</span>
+                                    <span>' . htmlspecialchars($blog['readingTime']) . ' read</span>
+                                </div>
+                                <p class="blog-summary">' . htmlspecialchars($blog['summary']) . '</p>
+                                <a class="blog-link" data-blog="' . htmlspecialchars($blog['id']) . '">
+                                    Read More →
+                                </a>
+                            </div>
+                        </div>';
                     }
                     ?>
                 </div>
@@ -92,7 +121,11 @@
             </div>
             
             <div id="project-overlay" class="project-overlay">
-                <div id="project-content"></div>
+                <div id="project-overlay-content"></div>
+            </div>
+
+            <div id="blog-overlay" class="blog-overlay">
+                <div id="blog-overlay-content"></div>
             </div>
         </div>
 
@@ -101,30 +134,46 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script>
             $(document).ready(function() {
+                // Project handling
                 $('.project-link').click(function(e) {
                     e.preventDefault();
-                    const project = $(this).data('project');
-                    const isBlog = $(this).closest('.projects-list').prev('p').text() === 'Blogs';
-                    
-                    // Load content
+                    const projectId = $(this).data('project');
+                    const hasPost = $(this).data('has-post');
+                    const externalUrl = $(this).data('external-url');
+
+                    if (hasPost) {
+                        loadContent('load-project.php', { project: projectId }, 'project-overlay');
+                    } else if (externalUrl) {
+                        window.open(externalUrl, '_blank');
+                    }
+                });
+
+                // Blog handling
+                $('.blog-link').click(function(e) {
+                    e.preventDefault();
+                    const blogId = $(this).data('blog');
+                    loadContent('load-blog.php', { blog: blogId }, 'blog-overlay');
+                });
+
+                function loadContent(endpoint, data, overlayId) {
                     $.ajax({
-                        url: isBlog ? 'load-blog.php' : 'load-project.php',
+                        url: endpoint,
                         method: 'GET',
-                        data: isBlog ? { blog: project } : { project: project },
+                        data: data,
                         success: function(response) {
-                            $('#project-content').html(response);
-                            $('#project-overlay').fadeIn(300);
+                            $(`#${overlayId}-content`).html(response);
+                            $(`#${overlayId}`).fadeIn(300);
                             
                             // Handle back button click
                             $('.back-button').click(function() {
-                                $('#project-overlay').fadeOut(300);
+                                $(`#${overlayId}`).fadeOut(300);
                             });
                         },
                         error: function() {
-                            $('#project-content').html('<p class="text-danger">Error loading content.</p>');
+                            $(`#${overlayId}-content`).html('<p class="text-danger">Error loading content.</p>');
                         }
                     });
-                });
+                }
             });
         </script>
     </body>

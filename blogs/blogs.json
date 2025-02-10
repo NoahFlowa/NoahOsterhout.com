@@ -1,0 +1,12 @@
+{
+    "blogs": [
+        {
+            "id": "haversine-formula",
+            "title": "Haversine Formula; Simple How-To",
+            "summary": "A brief post on how to use Haversine Formula to calculate the distance between two points on Earth.  Used in a mobile app I was working on.",
+            "file": "haversine-formula.phpp",
+            "publishDate": "2024-02-10",
+            "readingTime": "15 min"
+        }
+    ]
+}

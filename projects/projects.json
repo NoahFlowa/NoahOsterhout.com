@@ -1,0 +1,20 @@
+{
+    "projects": [
+        {
+            "id": "personal-website",
+            "title": "Personal Website",
+            "summary": "A minimalist personal website built with PHP and Bootstrap",
+            "technologies": ["PHP", "Bootstrap"],
+            "externalUrl": "https://github.com/NoahFlowa/NoahOsterhout.com",
+            "hasPost": false
+        },
+        {
+            "id": "asop-app",
+            "title": "ASOP App: A Star Citizen Tool",
+            "summary": "Recreation of the iconic Star Citizen ASOP Terminal in Adobe ColdFusion 2023 and MySQL",
+            "technologies": ["Adobe ColdFusion", "Bootstrap", "MySQL", "Docker"],
+            "file": "asop-app.php",
+            "hasPost": true
+        }
+    ]
+}

@@ -61,6 +61,7 @@
             <div class="mt-5">
                 <p class="fs-3 mb-0">Projects</p>
                 <div class="projects-list">
+                    <p class='fs-5 mt-2'><a href="https://github.com/NoahFlowa/NoahOsterhout.com" target="_blank">personal-website</a></p>
                     <?php
                     // Get list of project files
                     $projects = glob('projects/*.php');

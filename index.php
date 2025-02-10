@@ -135,8 +135,9 @@
         <script>
             $(document).ready(function() {
                 // Project handling
-                $('.project-link').click(function(e) {
+                $(document).on('click touchstart', '.project-link', function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     const projectId = $(this).data('project');
                     const hasPost = $(this).data('has-post');
                     const externalUrl = $(this).data('external-url');
@@ -149,10 +150,18 @@
                 });
 
                 // Blog handling
-                $('.blog-link').click(function(e) {
+                $(document).on('click touchstart', '.blog-link', function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     const blogId = $(this).data('blog');
                     loadContent('load-blog.php', { blog: blogId }, 'blog-overlay');
+                });
+
+                // Handle overlay closing
+                $(document).on('click touchstart', '.back-button', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    $('.project-overlay, .blog-overlay').fadeOut(300);
                 });
 
                 function loadContent(endpoint, data, overlayId) {
@@ -163,11 +172,6 @@
                         success: function(response) {
                             $(`#${overlayId}-content`).html(response);
                             $(`#${overlayId}`).fadeIn(300);
-                            
-                            // Handle back button click
-                            $('.back-button').click(function() {
-                                $(`#${overlayId}`).fadeOut(300);
-                            });
                         },
                         error: function() {
                             $(`#${overlayId}-content`).html('<p class="text-danger">Error loading content.</p>');

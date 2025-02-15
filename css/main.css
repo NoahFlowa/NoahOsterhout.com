@@ -81,44 +81,43 @@ pre {
 }
 
 /* Experience and Education Sections */
+/* Education and Experience Section Styles */
+
+/* Container styles */
+.experience-education-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Timeline item styles */
 .border-start {
     border-color: var(--text-color) !important;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border-width: 2px !important;
+    transition: all 0.3s ease !important;
     padding-left: 1rem;
     display: block;
     transform: translateX(0);
     position: relative;
+    margin-bottom: 1.5rem;
 }
 
-.border-start:hover {
+/* Hover and active states */
+.border-start:hover,
+.border-start:active {
     border-color: var(--link-hover-color) !important;
     transform: translateX(4px);
 }
 
-/* Section Headers */
+/* Section headers */
 .section-header {
     color: var(--text-color) !important;
     transition: color 0.3s ease;
     margin-top: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 600;
 }
 
-/* .border-start:hover .section-header {
-    color: var(--link-hover-color) !important;
-} */
-
-/* Links within sections */
-.border-start a {
-    color: var(--text-color);
-    transition: color 0.3s ease;
-    text-decoration: none;
-}
-
-.border-start a:hover {
-    color: var(--link-hover-color);
-}
-
-/* Content spacing */
+/* Text content within timeline items */
 .border-start .ms-4 {
     margin-left: 1.5rem !important;
 }
@@ -131,29 +130,73 @@ pre {
 /* Text styles */
 .border-start .text-muted {
     color: var(--muted-color) !important;
+    transition: color 0.3s ease;
 }
 
 .border-start .fw-bold {
     color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .border-start .fst-italic {
     color: var(--muted-color);
+    transition: color 0.3s ease;
 }
 
-/* Mobile adjustments */
+/* Links within timeline items */
+.border-start a {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.border-start a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] .border-start {
+    border-color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .border-start:hover,
+[data-theme="dark"] .border-start:active {
+    border-color: var(--link-hover-color) !important;
+}
+
+[data-theme="dark"] .text-muted {
+    color: var(--muted-color) !important;
+}
+
+/* Mobile specific styles */
 @media (max-width: 767px) {
     .border-start {
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-transition: all 0.3s ease !important;
+        transition: all 0.3s ease !important;
     }
     
-    .border-start:active {
+    .border-start:active,
+    .border-start:focus {
         border-color: var(--link-hover-color) !important;
         transform: translateX(4px);
+        opacity: 0.9;
     }
-
-    .border-start:active .section-header {
-        color: var(--link-hover-color) !important;
+    
+    /* Ensure proper spacing on mobile */
+    .experience-education-container {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .border-start {
+        padding-left: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .border-start .ms-4 {
+        margin-left: 1rem !important;
     }
 }
 

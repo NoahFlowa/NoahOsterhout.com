@@ -83,7 +83,7 @@ pre {
 /* Experience and Education Sections */
 .border-start {
     border-color: var(--text-color) !important;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
     padding-left: 1rem;
     display: block;
     transform: translateX(0);
@@ -95,17 +95,19 @@ pre {
     transform: translateX(4px);
 }
 
-.fs-6[style*="color: #22c2fc"] {
+/* Section Headers */
+.section-header {
     color: var(--text-color) !important;
     transition: color 0.3s ease;
     margin-top: 1.5rem;
     font-weight: 600;
 }
 
-.border-start:hover .fs-6[style*="color: #22c2fc"] {
+/* .border-start:hover .section-header {
     color: var(--link-hover-color) !important;
-}
+} */
 
+/* Links within sections */
 .border-start a {
     color: var(--text-color);
     transition: color 0.3s ease;
@@ -116,6 +118,7 @@ pre {
     color: var(--link-hover-color);
 }
 
+/* Content spacing */
 .border-start .ms-4 {
     margin-left: 1.5rem !important;
 }
@@ -125,6 +128,7 @@ pre {
     color: var(--text-color);
 }
 
+/* Text styles */
 .border-start .text-muted {
     color: var(--muted-color) !important;
 }
@@ -135,6 +139,22 @@ pre {
 
 .border-start .fst-italic {
     color: var(--muted-color);
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .border-start {
+        cursor: pointer;
+    }
+    
+    .border-start:active {
+        border-color: var(--link-hover-color) !important;
+        transform: translateX(4px);
+    }
+
+    .border-start:active .section-header {
+        color: var(--link-hover-color) !important;
+    }
 }
 
 /* Projects and Blog Items Shared Styles */

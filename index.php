@@ -22,40 +22,123 @@
     </head>
     <body>
         <div class="container">
-        <div class="mt-5">
-            <p class="fs-1 mb-0">Noah Osterhout</p>
-            <p class="fs-4">Professional Code Wrangler Extraordinaire</p>
 
-            <div class="mt-2 mb-3">
-                <a href="https://github.com/NoahFlowa" target="_blank" class="me-3">
-                    <i class="fa-brands fa-square-github fa-lg"></i>
-                </a>
-                <a href="https://gitlab.com/NoahFlowa" target="_blank" class="me-3">
-                    <i class="fa-brands fa-square-gitlab fa-lg"></i>
-                </a>
-                <a href="https://stackoverflow.com/users/9227487/noah-osterhout?tab=profile" target="_blank" class="me-3">
-                    <i class="fa-brands fa-stack-overflow fa-lg"></i>
-                </a>
-                <a href="https://stackexchange.com/users/12700630/noah-osterhout" target="_blank" class="me-3">
-                    <i class="fa-brands fa-stack-exchange fa-lg"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/noah-osterhout-732171149" target="_blank" class="me-3">
-                    <i class="fa-brands fa-linkedin fa-lg"></i>
-                </a>
-                <a href="https://bday.noahosterhout.com" target="_blank" class="me-3">
-                    <i class="fa-solid fa-cake-candles"></i>
-                </a>
+            <div class="mt-5">
+                <p class="fs-1 mb-0">Noah Osterhout</p>
+                <p class="fs-4">Professional Code Wrangler Extraordinaire</p>
+
+                <div class="mt-2 mb-3">
+                    <a href="https://github.com/NoahFlowa" target="_blank" class="me-3">
+                        <i class="fa-brands fa-square-github fa-lg"></i>
+                    </a>
+                    <a href="https://gitlab.com/NoahFlowa" target="_blank" class="me-3">
+                        <i class="fa-brands fa-square-gitlab fa-lg"></i>
+                    </a>
+                    <a href="https://stackoverflow.com/users/9227487/noah-osterhout?tab=profile" target="_blank" class="me-3">
+                        <i class="fa-brands fa-stack-overflow fa-lg"></i>
+                    </a>
+                    <a href="https://stackexchange.com/users/12700630/noah-osterhout" target="_blank" class="me-3">
+                        <i class="fa-brands fa-stack-exchange fa-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/noah-osterhout-732171149" target="_blank" class="me-3">
+                        <i class="fa-brands fa-linkedin fa-lg"></i>
+                    </a>
+                    <a href="https://bday.noahosterhout.com" target="_blank" class="me-3">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </a>
+                </div>
             </div>
-        </div>
 
             <div class="mt-5">
                 <p class="fs-3 mb-0">Experience</p>
-                <p class="fs-5 mt-2">Systems Programmer @ <a href="https://sunfrogsolutions.com" target="_blank">SunFrog Solutions</a> (2022 - Present)</p>
+                <div class="border-start border-info ps-3 mt-3">
+                    <p class="fs-4 mt-2 mb-0">Systems Programmer @ <a href="https://sunfrogsolutions.com" target="_blank" class="text-decoration-none">SunFrog Solutions</a></p>
+                    <small class="text-muted fw-bold">2022 - Present</small>
+                    
+                    <div class="mt-3">
+                        <!-- E-Commerce Platforms -->
+                        <div class="mb-3">
+                            <p class="fs-6 mb-2 fw-bold section-header">
+                                E-Commerce Platforms
+                            </p>
+                            <div class="ms-4">
+                                <p class="mb-2">Developed SunFrog Shops platform enabling custom product creation without complex design tools.</p>
+                                <p class="mb-0">Overhauled the Product Builder in the SunFrog Solutions Manager web application.</p>
+                            </div>
+                        </div>
+
+                        <!-- Data Intelligence -->
+                        <div class="mb-3">
+                            <p class="fs-6 mb-2 fw-bold section-header">
+                                Data Intelligence
+                            </p>
+                            <div class="ms-4">
+                                <p class="mb-0">Built data mining and aggregation tools using NodeJS & Puppeteer, creating comprehensive databases for products, competitor analytics, and market insights.</p>
+                            </div>
+                        </div>
+
+                        <!-- Business Operations -->
+                        <div class="mb-3">
+                            <p class="fs-6 mb-2 fw-bold section-header">
+                                Business Operations
+                            </p>
+                            <div class="ms-4">
+                                <p class="mb-0">Developed and maintained crucial business tools including order analytics, inventory management, customer service systems, and HR tools.</p>
+                            </div>
+                        </div>
+
+                        <!-- Integration Development -->
+                        <div class="mb-3">
+                            <p class="fs-6 mb-2 fw-bold section-header">
+                                Integration Development
+                            </p>
+                            <div class="ms-4">
+                                <p class="mb-0">Created multi-carrier shipping integrations (DHL, USPS, UPS, FedEx, Pitney Bowes) and inventory sync systems connecting with Shopify, Gameday Couture and Fanatics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="mt-5">
                 <p class="fs-3 mb-0">Education</p>
-                <p class="fs-5 mt-2">Bachelors of Science - Computer Information Systems @ Ferris State University <a href="/docs/Noah_Osterhout_CIS_eDiploma.pdf" download>(Diploma PDF)</a></p>
+                <div class="border-start border-info ps-3 mt-3">
+                    <!-- Ferris State University -->
+                    <div class="mb-4">
+                        <p class="fs-4 mt-2 mb-0">Bachelors of Science - Computer Information Systems @ <a href="https://www.ferris.edu" target="_blank" class="text-decoration-none">Ferris State University</a> <a class="fs-6" href="/docs/Noah_Osterhout_CIS_eDiploma.pdf" download>(Diploma PDF)</a></p>
+                        <small class="text-muted fw-bold">2020 - 2022</small>
+
+                        <div class="mt-3">
+                            <p class="fs-6 mb-2 fw-bold section-header">
+                                Senior Capstone Achievement
+                            </p>
+                            <div class="ms-4">
+                                <p class="mb-2">Co-Led award-winning team in developing enterprise ERP inventory system across two semesters.</p>
+                                <p class="mb-0"><span class="fw-bold">Tech Stack:</span> Angular, TypeScript, C#, SQL Server, Karma, Bootstrap, SCSS</p>
+                                <p class="mb-0"><span class="fw-bold">Role:</span> Co-Team Leader & Project Owner</p>
+                                <p class="mb-0"><span class="fst-italic">Selected for implementation among competing teams</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Northwestern Michigan College -->
+                    <div>
+                        <p class="fs-4 mt-2 mb-0">Computer Information Systems @ <a href="https://www.nmc.edu" target="_blank" class="text-decoration-none">Northwestern Michigan College</a></p>
+                        <small class="text-muted fw-bold">2017 - 2020</small>
+
+                        <div class="mt-3">
+                            <p class="fs-6 mb-2 fw-bold section-header">
+                                Sophomore Capstone Project
+                            </p>
+                            <div class="ms-4">
+                                <p class="mb-2">Led development of Chatversity - a collegiate social platform winning first place among 12 teams.</p>
+                                <p class="mb-0"><span class="fw-bold">Tech Stack:</span> Angular JS, Native Script, Bootstrap 4, Font Awesome</p>
+                                <p class="mb-0"><span class="fw-bold">Role:</span> Team Leader & Lead Presenter</p>
+                                <p class="mb-0"><span class="fst-italic">Presented to NMC IT Advisory Board, College President, and Ferris State faculty</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="mt-5">
@@ -73,7 +156,7 @@
                             <p class="project-summary">' . htmlspecialchars($project['summary']) . '</p>
                             <div class="project-tags mb-3">';
                             foreach($project['technologies'] as $tech) {
-                                echo '<span class="tech-tag">' . htmlspecialchars($tech) . '</span>';
+                                echo '<span class="tech-tag">&nbsp;' . htmlspecialchars($tech) . '&nbsp;</span>';
                             }
                             echo '</div>
                             <a class="project-link" 

@@ -80,6 +80,63 @@ pre {
     padding-bottom: 4rem;
 }
 
+/* Experience and Education Sections */
+.border-start {
+    border-color: var(--text-color) !important;
+    transition: all 0.3s ease;
+    padding-left: 1rem;
+    display: block;
+    transform: translateX(0);
+    position: relative;
+}
+
+.border-start:hover {
+    border-color: var(--link-hover-color) !important;
+    transform: translateX(4px);
+}
+
+.fs-6[style*="color: #22c2fc"] {
+    color: var(--text-color) !important;
+    transition: color 0.3s ease;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+.border-start:hover .fs-6[style*="color: #22c2fc"] {
+    color: var(--link-hover-color) !important;
+}
+
+.border-start a {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.border-start a:hover {
+    color: var(--link-hover-color);
+}
+
+.border-start .ms-4 {
+    margin-left: 1.5rem !important;
+}
+
+.border-start p {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.border-start .text-muted {
+    color: var(--muted-color) !important;
+}
+
+.border-start .fw-bold {
+    color: var(--text-color);
+}
+
+.border-start .fst-italic {
+    color: var(--muted-color);
+}
+
 /* Projects and Blog Items Shared Styles */
 .project-item,
 .blog-item {

@@ -81,43 +81,45 @@ pre {
 }
 
 /* Experience and Education Sections */
-/* Education and Experience Section Styles */
-
-/* Container styles */
-.experience-education-container {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-/* Timeline item styles */
+/* Experience and Education Timeline Items */
 .border-start {
-    border-color: var(--text-color) !important;
-    border-width: 2px !important;
-    transition: all 0.3s ease !important;
+    border-left: 2px solid var(--text-color) !important; /* Explicitly set the border */
     padding-left: 1rem;
     display: block;
     transform: translateX(0);
     position: relative;
     margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
 }
 
-/* Hover and active states */
-.border-start:hover,
-.border-start:active {
-    border-color: var(--link-hover-color) !important;
-    transform: translateX(4px);
+/* Base hover effect - will apply on desktop */
+@media (min-width: 768px) {
+    .border-start:hover {
+        border-left-color: var(--link-hover-color) !important;
+        transform: translateX(4px);
+    }
 }
 
-/* Section headers */
-.section-header {
-    color: var(--text-color) !important;
-    transition: color 0.3s ease;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
+/* Mobile touch interactions */
+@media (max-width: 767px) {
+    .border-start {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Only apply color change and transform when actually touched */
+    .border-start:active {
+        border-left-color: var(--link-hover-color) !important;
+        transform: translateX(4px);
+    }
+    
+    /* Remove any hover effects on mobile */
+    .border-start:hover {
+        border-left-color: var(--text-color) !important;
+        transform: none;
+    }
 }
 
-/* Text content within timeline items */
+/* Content styling */
 .border-start .ms-4 {
     margin-left: 1.5rem !important;
 }
@@ -127,77 +129,40 @@ pre {
     color: var(--text-color);
 }
 
+/* Section headers */
+.section-header {
+    color: var(--text-color) !important;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
 /* Text styles */
 .border-start .text-muted {
     color: var(--muted-color) !important;
-    transition: color 0.3s ease;
 }
 
 .border-start .fw-bold {
     color: var(--text-color);
-    transition: color 0.3s ease;
 }
 
 .border-start .fst-italic {
     color: var(--muted-color);
-    transition: color 0.3s ease;
 }
 
-/* Links within timeline items */
-.border-start a {
-    color: var(--text-color);
-    transition: color 0.3s ease;
-    text-decoration: none;
-}
-
-.border-start a:hover {
-    color: var(--link-hover-color);
-}
-
-/* Dark mode specific styles */
+/* Dark mode adjustments */
 [data-theme="dark"] .border-start {
-    border-color: var(--text-color) !important;
+    border-left-color: var(--text-color) !important;
 }
 
-[data-theme="dark"] .border-start:hover,
-[data-theme="dark"] .border-start:active {
-    border-color: var(--link-hover-color) !important;
+[data-theme="dark"] .border-start:hover {
+    border-left-color: var(--link-hover-color) !important;
 }
 
-[data-theme="dark"] .text-muted {
-    color: var(--muted-color) !important;
-}
-
-/* Mobile specific styles */
-@media (max-width: 767px) {
-    .border-start {
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-transition: all 0.3s ease !important;
-        transition: all 0.3s ease !important;
-    }
-    
-    .border-start:active,
-    .border-start:focus {
-        border-color: var(--link-hover-color) !important;
-        transform: translateX(4px);
-        opacity: 0.9;
-    }
-    
-    /* Ensure proper spacing on mobile */
-    .experience-education-container {
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .border-start {
-        padding-left: 0.75rem;
-        margin-bottom: 1.25rem;
-    }
-    
-    .border-start .ms-4 {
-        margin-left: 1rem !important;
-    }
+/* Ensure transitions are smooth */
+.border-start,
+.border-start * {
+    transition: all 0.3s ease;
 }
 
 /* Projects and Blog Items Shared Styles */

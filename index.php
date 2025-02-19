@@ -143,14 +143,14 @@
 
             <div class="mt-5">
                 <p class="fs-3 mb-0">Projects</p>
-                <div class="projects-grid row g-4 mt-2">
+                <div class="projects-grid row g-4 mt-4">
                 <?php
                 $projectsJson = file_get_contents('projects/projects.json');
                 $projects = json_decode($projectsJson, true)['projects'];
 
                 foreach($projects as $project) {
                     echo '
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="margin-bottom: 0; margin-top: 0;">
                         <div class="project-item">
                             <h3 class=" fs-5 project-title">' . htmlspecialchars($project['title']) . '</h3>
                             <p class="project-summary">' . htmlspecialchars($project['summary']) . '</p>
@@ -174,14 +174,14 @@
 
             <div class="mt-5">
                 <p class="fs-3 mb-0">Blog Posts</p>
-                <div class="blogs-grid row g-4 mt-2">
+                <div class="blogs-grid row g-4 mt-3">
                     <?php
                     $blogsJson = file_get_contents('blogs/blogs.json');
                     $blogs = json_decode($blogsJson, true)['blogs'];
                     
                     foreach($blogs as $blog) {
                         echo '
-                        <div class="col-md-6">
+                        <div class="col-md-6" style="margin-bottom: 0; margin-top: 0;">
                             <div class="blog-item">
                                 <h3 class="fs-5 blog-title">' . htmlspecialchars($blog['title']) . '</h3>
                                 <div class="blog-metadata">

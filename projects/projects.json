@@ -4,7 +4,7 @@
             "id": "personal-website",
             "title": "Personal Website",
             "summary": "A minimalist personal website built with PHP and Bootstrap",
-            "technologies": ["PHP", "Bootstrap"],
+            "technologies": ["PHP", "Bootstrap", "Docker"],
             "externalUrl": "https://github.com/NoahFlowa/NoahOsterhout.com",
             "hasPost": false
         },

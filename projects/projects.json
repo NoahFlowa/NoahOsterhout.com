@@ -15,6 +15,14 @@
             "technologies": ["Adobe ColdFusion", "Bootstrap", "MySQL", "Docker"],
             "file": "asop-app.php",
             "hasPost": true
+        },
+        {
+            "id": "star-citizen-cleaner",
+            "title": "Star Citizen Cleaner (SCCleaner.com)",
+            "summary": "A simple easy to use tool to clean up user config files and shader cache files for the video game Star Citizen",
+            "technologies": ["NodeJS", "Electron", "Electron Fusion", "HTML", "CSS", "JS", "Bootstrap"],
+            "externalUrl": "https://sccleaner.com",
+            "hasPost": true
         }
     ]
 }

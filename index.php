@@ -62,7 +62,8 @@
                                 E-Commerce Platforms
                             </p>
                             <div class="ms-4">
-                                <p class="mb-2">Developed SunFrog Shops platform enabling custom product creation without complex design tools.</p>
+                                <p class="mb-2">Helped develop SunFrog.com which is a leading Trending &amp; Viral POD website.</p>
+                                <p class="mb-2">Helped develop VictorySwag.com platform enabling custom product creation without complex design tools.</p>
                                 <p class="mb-0">Overhauled the Product Builder in the SunFrog Solutions Manager web application.</p>
                             </div>
                         </div>

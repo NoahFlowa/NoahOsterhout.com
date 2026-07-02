@@ -56,25 +56,26 @@
                     <small class="text-muted fw-bold">2022 - Present</small>
                     
                     <div class="mt-3">
-                        <!-- E-Commerce Platforms -->
+                        <!-- SunFrog.com Platform -->
                         <div class="mb-3">
                             <p class="fs-6 mb-2 fw-bold section-header">
-                                E-Commerce Platforms
+                                SunFrog.com Platform
                             </p>
                             <div class="ms-4">
-                                <p class="mb-2">Helped develop SunFrog.com which is a leading Trending &amp; Viral POD website.</p>
-                                <p class="mb-2">Helped develop VictorySwag.com platform enabling custom product creation without complex design tools.</p>
-                                <p class="mb-0">Overhauled the Product Builder in the SunFrog Solutions Manager web application.</p>
+                                <p class="mb-2">Co-developed <a href="https://SunFrog.com" target="_blank">SunFrog.com</a> which is a leading Trending &amp; Viral e-Commerce website</p>
+                                <p class="mb-0">Co-developed the Seller, Backoffice, Customer Support and other micro systems on the SunFrog.com platform</p>
                             </div>
                         </div>
 
-                        <!-- Data Intelligence -->
+                        <!-- SunFrog Manager -->
                         <div class="mb-3">
                             <p class="fs-6 mb-2 fw-bold section-header">
-                                Data Intelligence
+                                SunFrog Manager Platform
                             </p>
                             <div class="ms-4">
-                                <p class="mb-0">Built data mining and aggregation tools using NodeJS & Puppeteer, creating comprehensive databases for products, competitor analytics, and market insights.</p>
+                                <p class="mb-2">Rebuilt the SunFrog Manager from the ground up using NextJS 16.2, ShadCN/UI, and other technologies for a more modern platform.</p>
+                                <p class="mb-2">Implemented custom Merchant Architecture that allows for data mutation and custom routing without touching the global routes and tools which allows for easier maintenance and extensability.</p>
+                                <p class="mb-0">Implemented RBAC for Merchant Users that allows for tighter access control such as CREATE, READ, UPDATE, DELETE and EXPORT functionality across the entire platform.</p>
                             </div>
                         </div>
 
@@ -84,6 +85,7 @@
                                 Business Operations
                             </p>
                             <div class="ms-4">
+                                <p class="mb-2">Helped migrate new websites, platforms and technologies towards newer stacks such as Supabase, Vercel, NextJS, Docker, OpenAPI standards and more.</p>
                                 <p class="mb-0">Developed and maintained crucial business tools including order analytics, inventory management, customer service systems, and HR tools.</p>
                             </div>
                         </div>
@@ -94,6 +96,7 @@
                                 Integration Development
                             </p>
                             <div class="ms-4">
+                                <p class="mb-2">Rewrote <a href="https://developer.sunfrogsolutions.com" target="_blank">SunFrog Developer API</a> website and extended our API offerings to include 3PL logistics.</p>
                                 <p class="mb-0">Created multi-carrier shipping integrations (DHL, USPS, UPS, FedEx, Pitney Bowes) and inventory sync systems connecting with Shopify, Gameday Couture and Fanatics.</p>
                             </div>
                         </div>

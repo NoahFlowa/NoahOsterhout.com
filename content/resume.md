@@ -46,6 +46,12 @@ Software developer at [SunFrog Solutions](https://sunfrogsolutions.com) since 20
 
 ## Projects
 
+### [InputFinder](/projects/inputfinder) `featured`
+
+A Windows app that shows which keyboard or program is sending keystrokes.
+
+`C#` · `.NET 10` · `Windows Forms`
+
 ### [ASOP App: A Star Citizen Tool](/projects/asop-app)
 
 Recreation of the iconic Star Citizen ASOP Terminal in Adobe ColdFusion 2023 and MySQL.

@@ -16,8 +16,7 @@ if ($path === null) {
 }
 
 if ($slug !== $canonicalSlug) {
-    header('Location: /projects/' . $canonicalSlug, true, 301);
-    exit;
+    https_redirect('/projects/' . $canonicalSlug);
 }
 
 $doc = load_markdown($path);

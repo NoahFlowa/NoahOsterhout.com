@@ -90,4 +90,6 @@ Tech stack: Angular JS, Native Script, Bootstrap 4, Font Awesome. Role: Team Lea
 
 ## Skills
 
-TypeScript, Next.js, React, Tailwind CSS, Supabase, Postgres, PHP, ColdFusion, Node.js, Electron, Docker, Cloudflare, Vercel, SQL Server, MySQL
+TypeScript, Next.js, React, Tailwind CSS, Supabase, Postgres, PHP, ColdFusion, Node.js, Electron, Docker, Cloudflare, Vercel, SQL Server, MySQL, APIs
+
+AI tooling: Grok, Cursor, Claude, MCP, Agentic Skills

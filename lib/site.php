@@ -11,6 +11,19 @@ function e(?string $value): string
     return htmlspecialchars($value ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
 
+function https_redirect(string $path): void
+{
+    $host = strtolower(trim((string) ($_SERVER['HTTP_HOST'] ?? '')));
+    if (preg_match('/^([a-z0-9.-]+)(?::\d+)?$/', $host, $m) !== 1) {
+        $name = 'noahosterhout.com';
+    } else {
+        $name = $m[1];
+    }
+
+    header('Location: https://' . $name . $path, true, 301);
+    exit;
+}
+
 function https_url(string $url): ?string
 {
     return preg_match('#^https://[^\s<>"]+$#', $url) === 1 ? $url : null;
@@ -442,6 +455,30 @@ function person_jsonld(array $meta): array
         $data['alumniOf'] = $alumni;
     }
 
+    $data['knowsAbout'] = [
+        'TypeScript',
+        'Next.js',
+        'React',
+        'Tailwind CSS',
+        'Supabase',
+        'Postgres',
+        'PHP',
+        'ColdFusion',
+        'Node.js',
+        'Electron',
+        'Docker',
+        'Cloudflare',
+        'Vercel',
+        'SQL Server',
+        'MySQL',
+        'APIs',
+        'Grok',
+        'Cursor',
+        'Claude',
+        'MCP',
+        'Agentic Skills',
+    ];
+
     return $data;
 }
 
@@ -505,6 +542,7 @@ function render_page(array $page): void
         <meta name="author" content="Noah Osterhout">
         <meta name="robots" content="' . e($robots) . '">
         <meta name="theme-color" content="#f7f4ed">
+        <script src="/js/theme-init.js"></script>
         ' . $canonicalTags . '
         <meta property="og:title" content="' . e($title) . '">
         <meta property="og:description" content="' . e($description) . '">
@@ -524,19 +562,6 @@ function render_page(array $page): void
         <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
         <link rel="manifest" href="/favicons/site.webmanifest">
-        <script>
-            (function () {
-                try {
-                    var theme = localStorage.getItem("theme");
-                    if (theme !== "light" && theme !== "dark") {
-                        theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-                    }
-                    document.documentElement.setAttribute("data-theme", theme);
-                    var color = document.querySelector("meta[name=theme-color]");
-                    if (color) color.setAttribute("content", theme === "dark" ? "#1c1b19" : "#f7f4ed");
-                } catch (e) {}
-            })();
-        </script>
         ' . $jsonld . '
     </head>
     <body>

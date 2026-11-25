@@ -1,1 +1,36 @@
+RewriteEngine On
+
+# Content sources and the PHP library are read by the app, not by browsers.
+RewriteRule ^(content|lib)/ - [F,L]
+RewriteRule \.md$ - [F,L]
+
+# Canonical home.
+RewriteCond %{THE_REQUEST} \s/+index\.php[\s?] [NC]
+RewriteRule ^index\.php$ /? [R=301,L]
+
+# Direct hits on the project front controller.
+RewriteCond %{THE_REQUEST} \s/+project\.php[\s?] [NC]
+RewriteCond %{QUERY_STRING} (?:^|&)slug=([A-Za-z0-9-]+)(?:&|$)
+RewriteRule ^project\.php$ /projects/%1? [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+project\.php[\s?] [NC]
+RewriteRule ^project\.php$ /? [R=301,L]
+
+# The blog is gone.
+RewriteRule ^blogs(?:/.*)?$ /? [R=301,L]
+RewriteRule ^load-blog\.php$ /? [R=301,L]
+
+# Old project loader and /projects/<slug>.php URLs.
+RewriteCond %{QUERY_STRING} (?:^|&)project=([A-Za-z0-9-]+)(?:&|$)
+RewriteRule ^load-project\.php$ /projects/%1? [R=301,L]
+RewriteRule ^load-project\.php$ /? [R=301,L]
+RewriteRule ^projects/([A-Za-z0-9-]+)\.php$ /projects/$1 [R=301,L]
+
+RewriteRule ^projects/([A-Za-z0-9-]+)/$ /projects/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+RewriteRule ^projects/([A-Za-z0-9-]+)$ /project.php?slug=$1 [L]
+
 ErrorDocument 404 /404.php
